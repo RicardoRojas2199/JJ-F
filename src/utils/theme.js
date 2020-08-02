@@ -31,12 +31,25 @@ export const theme = {
     primary: "#004693",
     secondary: "#ffc600",
   },
+  text: {
+    heading: {
+      fontFamily: "heading",
+      lineHeight: "heading",
+      fontWeight: "heading",
+    },
+  },
+  styles: {
+    h1: {
+      variant: "text.heading",
+      fontSize: 6,
+    },
+  },
   layout: {
     header: {
       bg: "primary",
       color: "white",
       height: 64,
-      py: 3,
+      py: 2,
       px: [3, null, "calc(50vw - 480px)"],
       display: "grid",
       gridTemplateColumns: ["1fr 32px", null, "300px 1fr"],

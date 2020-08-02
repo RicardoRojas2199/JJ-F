@@ -6,7 +6,7 @@ import Header from "./header/header";
 import Drawer from "./header/drawer";
 import Slider from "./slider";
 
-const Layout = ({ children }) => {
+const Layout = ({ children, location }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const handleMenu = () => {
     setMenuOpen((current) => !current);
@@ -33,7 +33,7 @@ const Layout = ({ children }) => {
       />
       <Header handleMenu={handleMenu} />
       <Drawer menuOpen={menuOpen} />
-      <Slider />
+      {location && location.pathname === "/" && <Slider />}
       <main>{children}</main>
     </div>
   );

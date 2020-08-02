@@ -1,5 +1,6 @@
 /**@jsx jsx */
 import { jsx } from "theme-ui";
+import { Link } from "gatsby";
 
 const links = [
   {
@@ -23,9 +24,9 @@ const links = [
 const Navigation = () => (
   <nav>
     {links.map((link) => (
-      <a sx={{ fontFamily: "heading" }} href={link.path}>
+      <Link sx={{ fontFamily: "heading" }} to={link.path} key={link.name}>
         {link.name}
-      </a>
+      </Link>
     ))}
   </nav>
 );

@@ -1,6 +1,6 @@
 /**@jsx jsx */
 import Img from "gatsby-image";
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql, useStaticQuery, Link } from "gatsby";
 import { jsx } from "theme-ui";
 import { TiThMenu } from "react-icons/ti";
 import Navigation from "./navigation";
@@ -19,10 +19,13 @@ const Header = ({ handleMenu }) => {
   `);
   return (
     <header>
-      <Img
-        fluid={data.file.childImageSharp.fluid}
-        imgStyle={{ width: "110px", borderRadius: "8px" }}
-      />
+      <Link to="/" sx={{ width: "110px", m: 0 }}>
+        <Img
+          fluid={data.file.childImageSharp.fluid}
+          imgStyle={{ width: "110px", borderRadius: "8px" }}
+        />
+      </Link>
+
       <Navigation />
       <TiThMenu onClick={handleMenu} />
     </header>
