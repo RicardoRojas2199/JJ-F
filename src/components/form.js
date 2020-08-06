@@ -3,7 +3,8 @@ import { jsx } from 'theme-ui';
 
 const Form = () => (
   <form
-    name="contacto"
+    id="contact"
+    name="contact"
     method="POST"
     data-netlify="true"
     action="/"
