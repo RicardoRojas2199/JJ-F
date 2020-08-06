@@ -6,11 +6,12 @@ const Form = () => (
     name="contacto"
     method="POST"
     data-netlify="true"
-    action="/gracias/"
+    action="/"
     sx={{
       variant: 'layout.form',
     }}
   >
+  <input type="hidden" name="form-name" value="contact" />
     <label htmlFor="nombre">
       Nombre
       <input
