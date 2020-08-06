@@ -17,7 +17,7 @@ const links = [
   },
   {
     name: 'Contáctenos',
-    path: '/',
+    path: '/contactenos',
   },
 ];
 

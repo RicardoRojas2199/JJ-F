@@ -4,22 +4,24 @@ import { jsx } from 'theme-ui';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 
-const Project = ({ project }) => {
-  const slug = project.frontmatter.slug.replace(/^obras\//, '/obras/');
+const Project = ({ project, servicios }) => {
+  const regex = servicios ? /^servicios\// : /^obras\//;
+  const path = servicios ? '/servicios/' : '/obras/';
+  const slug = project.frontmatter.slug.replace(regex, path);
   return (
-    <div
-      sx={{
-        bg: 'primary',
-        border: '1px solid #ccc',
-        boxShadow:
-          '0px 2px 4px rgba(40, 41, 61, 0.04), 0px 8px 16px rgba(96, 97, 112, 0.16)',
-      }}
-    >
+    <div>
       <Link
         to={slug}
         sx={{
-          color: 'text',
+          color: 'textLink',
           textDecoration: 'none',
+          '&:hover': {
+            textDecoration: 'underline',
+            '&>div.gatsby-image-wrapper': {
+              transform: 'translateY(-5px)',
+              boxShadow: '0px 10px 5px -5px rgba(0,0,0,0.27)',
+            },
+          },
         }}
       >
         <Img
@@ -28,16 +30,16 @@ const Project = ({ project }) => {
             aspectRatio: 1 / 1,
           }}
         />
-        <h3
+        <h6
           sx={{
             m: 0,
             textAlign: 'center',
             p: 2,
-            color: 'background',
+            textTransform: 'uppercase',
           }}
         >
           {project.frontmatter.title}
-        </h3>
+        </h6>
       </Link>
     </div>
   );

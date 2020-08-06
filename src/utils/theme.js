@@ -30,6 +30,8 @@ export const theme = {
     background: '#fff',
     primary: '#004693',
     secondary: '#ffc600',
+    textLink: '#004693',
+    muted: '#777b7f',
   },
   text: {
     heading: {
@@ -39,44 +41,82 @@ export const theme = {
     },
   },
   styles: {
-    display: 'grid',
-
     h1: {
       variant: 'text.heading',
-      fontSize: [6, 7],
+      fontSize: 6,
       textAlign: 'center',
     },
     h2: {
       variant: 'text.heading',
-      fontSize: 6,
-      mt: 0,
+      fontSize: 5,
     },
     h3: {
       variant: 'text.heading',
-      fontSize: 5,
+      fontSize: 4,
     },
     h4: {
       variant: 'text.heading',
-      fontSize: 4,
+      fontSize: 3,
     },
     h5: {
       variant: 'text.heading',
-      fontSize: 3,
+      fontSize: 2,
     },
     h6: {
       variant: 'text.heading',
-      fontSize: 2,
+      fontSize: 1,
     },
     p: {
       mt: 0,
       fontSize: [3, 4],
       mb: 2,
+      '& > span.gatsby-resp-image-wrapper': {
+        maxWidth: '400px!important',
+      },
+    },
+    ul: {
+      fontSize: [3, 4],
+    },
+  },
+  button: {
+    primary: {
+      color: 'background',
+      bg: 'textLink',
+      textTransform: 'uppercase',
+      px: 5,
+      py: 2,
+      fontFamily: 'heading',
+      fontWeight: 'heading',
+      fontSize: 2,
+      border: 'none',
+      outline: 'none',
+      borderRadius: '8px',
     },
   },
   layout: {
+    form: {
+      display: 'grid',
+      gridGap: 3,
+      maxWidth: '400px',
+      mx: 'auto',
+      label: {
+        display: 'grid',
+        gridGap: 2,
+        fontSize: 2,
+        fontFamily: 'heading',
+        fontWeight: 'heading',
+        input: {
+          height: '32px',
+          fontSize: 2,
+        },
+        textArea: {
+          fontSize: 2,
+        },
+      },
+    },
     header: {
-      bg: 'primary',
-      color: 'white',
+      bg: 'background',
+      color: 'text',
       position: 'fixed',
       zIndex: '300',
       width: '100vw',
@@ -86,6 +126,7 @@ export const theme = {
       display: 'grid',
       alignItems: 'center',
       gridTemplateColumns: ['1fr 32px', null, '300px 1fr'],
+      boxShadow: ' 0px 10px 5px -5px rgba(0,0,0,0.27)',
       svg: {
         fontSize: 5,
         display: ['block', null, 'none'],
@@ -97,13 +138,18 @@ export const theme = {
         display: ['none', null, 'flex'],
         justifyContent: 'space-around',
         alignItems: 'center',
+        height: '100%',
         a: {
-          color: 'background',
+          color: 'textLink',
           fontSize: 3,
           fontWeight: 'heading',
           textDecoration: 'none',
+          height: '100%',
+          display: 'flex',
+          alignItems: 'center',
+          borderBottom: '3px solid transparent',
           '&:hover': {
-            color: 'secondary',
+            borderBottom: (t) => `3px solid ${t.colors.secondary}`,
           },
         },
       },

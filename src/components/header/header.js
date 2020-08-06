@@ -27,7 +27,7 @@ const Header = ({ handleMenu }) => {
       </Link>
 
       <Navigation />
-      <TiThMenu onClick={handleMenu} />
+      <TiThMenu onClick={handleMenu} sx={{ color: 'textLink' }} />
     </header>
   );
 };
