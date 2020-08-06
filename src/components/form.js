@@ -6,7 +6,7 @@ const Form = () => (
     name="contacto"
     method="POST"
     data-netlify="true"
-    action="/gracias"
+    action="/gracias/"
     sx={{
       variant: 'layout.form',
     }}
