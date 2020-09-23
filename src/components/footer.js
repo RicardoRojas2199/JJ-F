@@ -1,16 +1,18 @@
 /**@jsx jsx */
-import { jsx } from 'theme-ui';
+import { jsx } from 'theme-ui'
 
 const Footer = () => (
   <footer
     sx={{
       textAlign: 'center',
-      color: 'muted',
-      pb: 1,
+      color: 'background',
+      py: 3,
+      bg: 'primary',
+      fontFamily: 'heading'
     }}
   >
-    Copyright ©{new Date().getFullYear()} JJ&amp;F Contratistas Generales
+    Copyright ©{new Date().getFullYear()} J J &amp; F Contratistas Generales
   </footer>
-);
+)
 
-export default Footer;
+export default Footer
