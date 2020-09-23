@@ -1,16 +1,16 @@
 /**@jsx jsx */
-import Img from 'gatsby-image';
-import { graphql, useStaticQuery } from 'gatsby';
-import { jsx } from 'theme-ui';
-import { useEffect, useState } from 'react';
+import Img from 'gatsby-image'
+import { graphql, useStaticQuery } from 'gatsby'
+import { jsx } from 'theme-ui'
+import { useEffect, useState } from 'react'
 
 const Slider = () => {
-  const [mobile, setMobile] = useState(true);
+  const [mobile, setMobile] = useState(true)
   useEffect(() => {
     if (window.innerWidth > 768) {
-      setMobile(false);
+      setMobile(false)
     }
-  }, []);
+  }, [])
   const data = useStaticQuery(graphql`
     query Bg {
       landscape: file(relativePath: { eq: "bg-landscape.jpg" }) {
@@ -28,7 +28,7 @@ const Slider = () => {
         }
       }
     }
-  `);
+  `)
   return (
     <div sx={{ position: 'relative', pt: 64 }}>
       {mobile ? (
@@ -44,14 +44,14 @@ const Slider = () => {
       )}
       <div
         sx={{
-          bg: 'text',
-          opacity: 0.4,
+          bg: 'black',
+          opacity: 0.6,
           position: 'absolute',
           top: 0,
           left: 0,
           width: '100%',
           height: '100%',
-          zIndex: 100,
+          zIndex: 100
         }}
       ></div>
       <div
@@ -71,7 +71,7 @@ const Slider = () => {
           fontWeight: 'heading',
           textTransform: 'uppercase',
           fontFamily: 'heading',
-          textAlign: 'center',
+          textAlign: 'center'
         }}
       >
         <h1>Diseñamos obras en general</h1>
@@ -79,7 +79,7 @@ const Slider = () => {
         <h2 sx={{ m: 0 }}>¡Averigualo!</h2>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Slider;
+export default Slider

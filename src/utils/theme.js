@@ -9,8 +9,8 @@ const defaultFontStack = [
   'sans-serif',
   'Apple Color Emoji',
   'Segoe UI Emoji',
-  'Segoe UI Symbol',
-];
+  'Segoe UI Symbol'
+]
 
 export const theme = {
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
@@ -18,65 +18,71 @@ export const theme = {
   fonts: {
     body: defaultFontStack.join(),
     heading: 'Raleway, sans-serif',
-    monospace: 'Menlo, monospace',
+    monospace: 'Menlo, monospace'
   },
   fontWeights: {
     body: 400,
     heading: 900,
-    bold: 700,
+    bold: 700
   },
   colors: {
-    text: '#000',
+    text: '#5d5d5d',
     background: '#fff',
     primary: '#004693',
     secondary: '#ffc600',
     textLink: '#004693',
-    muted: '#777b7f',
+    muted: '#777b7f'
   },
   text: {
     heading: {
       fontFamily: 'heading',
       lineHeight: 'heading',
-      fontWeight: 'heading',
-    },
+      fontWeight: 'heading'
+    }
   },
   styles: {
     h1: {
       variant: 'text.heading',
       fontSize: 6,
       textAlign: 'center',
+      color: 'primary'
     },
     h2: {
       variant: 'text.heading',
-      fontSize: 5,
+      fontSize: 5
     },
     h3: {
       variant: 'text.heading',
-      fontSize: 4,
+      fontSize: 4
     },
     h4: {
       variant: 'text.heading',
-      fontSize: 3,
+      fontSize: 3
     },
     h5: {
       variant: 'text.heading',
-      fontSize: 2,
+      fontSize: 2
     },
     h6: {
       variant: 'text.heading',
-      fontSize: 1,
+      fontSize: 1
     },
     p: {
       mt: 0,
-      fontSize: [3, 4],
-      mb: 2,
+      textAlign: 'left',
+      color: 'text',
+      fontFamily: 'heading',
       '& > span.gatsby-resp-image-wrapper': {
-        maxWidth: '400px!important',
-      },
+        maxWidth: '400px!important'
+      }
     },
     ul: {
-      fontSize: [3, 4],
-    },
+      fontFamily: 'heading',
+      li: {
+        listStyleType: 'none',
+        mb: 3
+      }
+    }
   },
   button: {
     primary: {
@@ -90,8 +96,8 @@ export const theme = {
       fontSize: 2,
       border: 'none',
       outline: 'none',
-      borderRadius: '8px',
-    },
+      borderRadius: '8px'
+    }
   },
   layout: {
     form: {
@@ -108,15 +114,22 @@ export const theme = {
         input: {
           height: '32px',
           fontSize: 2,
+          borderRadius: '4px',
+          px: 2,
+          border: '1px solid #ccc',
+          bg: 'transparent'
         },
         textArea: {
           fontSize: 2,
-        },
-      },
+          borderRadius: '4px',
+          px: 2,
+          border: '1px solid #ccc'
+        }
+      }
     },
     header: {
-      bg: 'background',
-      color: 'text',
+      bg: 'primary',
+      color: 'background',
       position: 'fixed',
       zIndex: '300',
       width: '100vw',
@@ -129,10 +142,10 @@ export const theme = {
       boxShadow: ' 0px 10px 5px -5px rgba(0,0,0,0.27)',
       svg: {
         fontSize: 5,
-        display: ['block', null, 'none'],
+        display: ['block', null, 'none']
       },
       h1: {
-        m: 0,
+        m: 0
       },
       nav: {
         display: ['none', null, 'flex'],
@@ -140,7 +153,7 @@ export const theme = {
         alignItems: 'center',
         height: '100%',
         a: {
-          color: 'textLink',
+          color: 'background',
           fontSize: 3,
           fontWeight: 'heading',
           textDecoration: 'none',
@@ -149,10 +162,10 @@ export const theme = {
           alignItems: 'center',
           borderBottom: '3px solid transparent',
           '&:hover': {
-            borderBottom: (t) => `3px solid ${t.colors.secondary}`,
-          },
-        },
-      },
+            borderBottom: t => `3px solid ${t.colors.secondary}`
+          }
+        }
+      }
     },
     drawer: {
       position: 'fixed',
@@ -176,10 +189,10 @@ export const theme = {
           textTransform: 'uppercase',
           textAlign: 'center',
           '&:hover': {
-            color: 'primary',
-          },
-        },
-      },
-    },
-  },
-};
+            color: 'primary'
+          }
+        }
+      }
+    }
+  }
+}

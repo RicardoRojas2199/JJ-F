@@ -3,14 +3,16 @@ import { jsx } from 'theme-ui';
 
 const Form = () => (
   <form
-    name="contacto"
+    id="contact"
+    name="contact"
     method="POST"
     data-netlify="true"
-    action="/gracias"
+    action="/"
     sx={{
       variant: 'layout.form',
     }}
   >
+  <input type="hidden" name="form-name" value="contact" />
     <label htmlFor="nombre">
       Nombre
       <input

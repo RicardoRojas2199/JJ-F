@@ -1,9 +1,9 @@
 /**@jsx jsx */
-import Img from 'gatsby-image';
-import { graphql, useStaticQuery, Link } from 'gatsby';
-import { jsx } from 'theme-ui';
-import { TiThMenu } from 'react-icons/ti';
-import Navigation from './navigation';
+import Img from 'gatsby-image'
+import { graphql, useStaticQuery, Link } from 'gatsby'
+import { jsx } from 'theme-ui'
+import { TiThMenu } from 'react-icons/ti'
+import Navigation from './navigation'
 
 const Header = ({ handleMenu }) => {
   const data = useStaticQuery(graphql`
@@ -16,10 +16,13 @@ const Header = ({ handleMenu }) => {
         }
       }
     }
-  `);
+  `)
   return (
     <header sx={{ variant: 'layout.header' }}>
-      <Link to="/" sx={{ width: '110px', m: 0 }}>
+      <Link
+        to='/'
+        sx={{ width: '110px', m: 0, bg: 'white', borderRadius: '25%' }}
+      >
         <Img
           fluid={data.file.childImageSharp.fluid}
           imgStyle={{ width: '110px', borderRadius: '8px' }}
@@ -27,9 +30,9 @@ const Header = ({ handleMenu }) => {
       </Link>
 
       <Navigation />
-      <TiThMenu onClick={handleMenu} sx={{ color: 'textLink' }} />
+      <TiThMenu onClick={handleMenu} />
     </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header
